@@ -41,6 +41,27 @@ app.get('/validate-license', (req, res) => {
     }
 });
 
+// Endpoint to check if a license key is locked (associated with an HWID)
+app.get('/is-locked', (req, res) => {
+    const { licenseKey } = req.query;
+
+    // Check if licenseKey is provided
+    if (!licenseKey) {
+        return res.status(400).json({ locked: false, message: 'License key is missing' });
+    }
+
+    // Check if the license key exists and has an HWID associated with it (locked)
+    if (licenseData.hasOwnProperty(licenseKey)) {
+        if (licenseData[licenseKey] !== null) {
+            return res.status(200).json({ locked: true, message: 'License key is locked to a machine' });
+        } else {
+            return res.status(200).json({ locked: false, message: 'License key is not locked to any machine' });
+        }
+    } else {
+        return res.status(400).json({ locked: false, message: 'License key is invalid' });
+    }
+});
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
