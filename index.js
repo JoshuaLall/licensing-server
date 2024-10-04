@@ -12,6 +12,14 @@ const validLicenses = [
 app.get('/validate-license', (req, res) => {
     const { licenseKey } = req.query;
 
+    // Log the incoming license key for debugging
+    console.log('Received License Key:', licenseKey);
+
+    // Check if the license key was provided
+    if (!licenseKey) {
+        return res.status(400).json({ valid: false, message: 'License key is missing' });
+    }
+
     // Check if the provided licenseKey is in the list of valid licenses
     if (validLicenses.includes(licenseKey)) {
         res.status(200).json({ valid: true, message: 'License is valid' });
@@ -20,6 +28,7 @@ app.get('/validate-license', (req, res) => {
     }
 });
 
+// Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
