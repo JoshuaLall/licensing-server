@@ -7,6 +7,7 @@ const licenseData = {
     "kzSAxkzKRWJmaeppoSXbquAdQHe5061v": null, // HWID will be stored here for Mouui
     "xI0ZLOydkCojWbJsngesFcJrUbV3xY2k": null  // HWID will be stored here for Jin
     "NaqJiWygK3Vor1EwYtfUI2TnammJxAQk": null  //HWID will be stored here for Skiziti
+    "5VDG5xDHWYkqV7MRRwftzSOzQqbcSu8U": null  // HWID will be store here for Blade
 };
 
 // A simple endpoint that returns license validation
