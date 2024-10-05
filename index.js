@@ -5,7 +5,8 @@ const PORT = process.env.PORT || 10000;
 // Store valid license keys and their associated HWIDs
 const licenseData = {
     "kzSAxkzKRWJmaeppoSXbquAdQHe5061v": null, // HWID will be stored here for Mouui
-    "xI0ZLOydkCojWbJsngesFcJrUbV3xY2k": null  // HWID will be stored here for User 2
+    "xI0ZLOydkCojWbJsngesFcJrUbV3xY2k": null  // HWID will be stored here for Jin
+    "NaqJiWygK3Vor1EwYtfUI2TnammJxAQk": null  //HWID will be stored here for Skiziti
 };
 
 // A simple endpoint that returns license validation
